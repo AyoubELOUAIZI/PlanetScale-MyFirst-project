@@ -12,7 +12,6 @@ const MAX_RECORDS = 1000;
 
 const characterIndexToWandIndex = {};
 //-------------------------------------------------------------------------------------//
-
 const loadAndSaveData = async () => {
     try {
         //clear the existing records
@@ -79,7 +78,7 @@ const getCharacterDataToSave = (data) => {
         delete character['alternate_names'];
         delete character['alternate_actors'];
         delete character['wand'];
-        // delete character['id'];
+         delete character['id'];
        
         // delete character['actor'];
         const retVal = Object.values(character);

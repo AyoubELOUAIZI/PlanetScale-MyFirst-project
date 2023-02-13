@@ -3,10 +3,10 @@ export const dropWandTableSQL = 'DROP TABLE IF EXISTS wand';
 export const dropHPCharacterTableSQL = 'DROP TABLE  IF EXISTS hp_character';
 export const insertWandSQL = 'INSERT INTO wand (wood, core, wand_length, character_id) VALUES ?';
 // export const insertHPCharacterSQL = 'INSERT INTO hp_character (full_name, species, gender, house, date_of_birth, year_of_birth, is_wizard, ancestry, eye_colour, hair_colour, wand_id, patronus, is_hogwarts_student, is_hogwarts_staff,actor, is_alive, image) VALUES ?';
-export const insertHPCharacterSQL = 'INSERT INTO hp_character ( id,full_name, species, gender, house, date_of_birth, year_of_birth, is_wizard, ancestry, eye_colour,  wand_id, patronus, is_hogwarts_student, is_hogwarts_staff,actor, is_alive, image) VALUES ?';
+export const insertHPCharacterSQL = 'INSERT INTO hp_character ( full_name, species, gender, house, date_of_birth, year_of_birth, is_wizard, ancestry, eye_colour, hair_colour, wand_id, is_hogwarts_student, is_hogwarts_staff,actor, is_alive, image) VALUES ?';
 
 export const createHPCharacterTableSQL = `CREATE TABLE hp_character (
-    id VARCHAR(240), 
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(240), 
     species VARCHAR(40),
     gender VARCHAR(40), 
@@ -16,8 +16,9 @@ export const createHPCharacterTableSQL = `CREATE TABLE hp_character (
     is_wizard BOOLEAN, 
     ancestry VARCHAR(40), 
     eye_colour VARCHAR(40), 
+    hair_colour VARCHAR(40), 
     wand_id INT,
-    patronus VARCHAR(40), 
+    
     is_hogwarts_student BOOLEAN, 
     is_hogwarts_staff BOOLEAN, 
     actor VARCHAR(240), 
